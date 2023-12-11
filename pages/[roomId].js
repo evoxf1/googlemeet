@@ -6,3 +6,9 @@ const Room = () => {
 };
 
 export default Room
+
+// useEffect(() => {
+//     socket?.on("connect", () => {
+//       console.log(socket.id);
+//     });
+//   }, [socket]);
