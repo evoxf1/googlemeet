@@ -1,28 +1,30 @@
-import { useState, useEffect, useRef } from "react";
+import {useState, useEffect, useRef} from 'react'
+
 
 const useMediaStream = () => {
-  const [state, setState] = useState(null);
-  const isStreamSet = useRef(false);
-  useEffect(() => {
-    if (isStreamSet.current) return;
-    isStreamSet.current = true;
-    (async function initStream() {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({
-          audio: true,
-          video: true,
-        });
-        console.log("setting your stram");
-        setState(stream);
-      } catch (e) {
-        console.log("Error is media navigator", e);
-      }
-    })();
-  }, []);
+    const [state, setState] = useState(null)
+    const isStreamSet = useRef(false)
 
-  return {
-    stream: state,
-  };
-};
+    useEffect(() => {
+        if (isStreamSet.current) return;
+        isStreamSet.current = true;
+        (async function initStream() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    audio: true,
+                    video: true
+                })
+                console.log("setting your stream")
+                setState(stream)
+            } catch (e) {
+                console.log("Error in media navigator", e)
+            }
+        })()
+    }, [])
 
-export default useMediaStream;
+    return {
+        stream: state
+    }
+}
+
+export default useMediaStream

@@ -3,10 +3,11 @@ import { io } from "socket.io-client";
 
 const SocketContext = createContext(null);
 
-export const useSocket=()=>{
+export const useSocket = () => {
     const socket = useContext(SocketContext)
     return socket
 }
+
 export const SocketProvider = (props) => {
   const { children } = props;
   const [socket, setSocket] = useState(null);
@@ -17,10 +18,11 @@ export const SocketProvider = (props) => {
     setSocket(connection);
   }, []);
 
-  socket?.on('connect_error', async(err)=>{
-    console.log("Error establishing socket with server", err)
-    await fetch('/api/socket ')
+  socket?.on('connect_error', async (err) => {
+    console.log("Error establishing socket", err)
+    await fetch('/api/socket')
   })
+
   return (
     <SocketContext.Provider value={socket}>{children}</SocketContext.Provider>
   );
