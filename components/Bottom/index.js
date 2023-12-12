@@ -1,7 +1,7 @@
 import cx from "classnames";
 import { Mic, Video, PhoneOff, MicOff, VideoOff } from "lucide-react";
 
-import styles from "@/component/Bottom/index.module.css";
+import styles from "@/components/Bottom/index.module.css"
 
 const Bottom = (props) => {
   const { muted, playing, toggleAudio, toggleVideo, leaveRoom } = props;
@@ -26,7 +26,7 @@ const Bottom = (props) => {
           onClick={toggleVideo}
         />
       )}
-      <PhoneOff size={55} className={cx(styles.icon)} onClick={leaveRoom}/>
+      <PhoneOff size={55} className={cx(styles.icon)} onClick={leaveRoom} />
     </div>
   );
 };

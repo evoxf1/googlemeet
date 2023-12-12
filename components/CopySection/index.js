@@ -1,7 +1,7 @@
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Copy } from "lucide-react";
 
-import styles from "@/component/CopySection/index.module.css";
+import styles from "@/components/CopySection/index.module.css";
 
 const CopySection = (props) => {
   const { roomId } = props;

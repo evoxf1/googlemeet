@@ -6,12 +6,12 @@ import usePeer from "@/hooks/usePeer";
 import useMediaStream from "@/hooks/useMediaStream";
 import usePlayer from "@/hooks/usePlayer";
 
-import Player from "@/component/Player";
-import Bottom from "@/component/Bottom";
-import CopySection from "@/component/CopySection";
 
 import styles from "@/styles/room.module.css";
 import { useRouter } from "next/router";
+import Player from "@/components/Player";
+import CopySection from "@/components/CopySection";
+import Bottom from "@/components/Bottom";
 
 const Room = () => {
   const socket = useSocket();
